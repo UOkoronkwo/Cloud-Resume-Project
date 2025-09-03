@@ -80,3 +80,13 @@ resource "aws_apigatewayv2_route" "options_route" {
   authorization_type = "NONE"
 }
 
+terraform {
+  backend "s3" {
+    bucket         = "cloud-resume-tf-state-uchennaokoronkwo"
+    key            = "cloud-resume/terraform.tfstate"   
+    region         = "us-east-1"
+    dynamodb_table = "tf-locks"
+    encrypt        = true
+  }
+}
+
