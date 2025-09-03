@@ -56,7 +56,7 @@ resource "aws_apigatewayv2_route" "post_route" {
   api_id             = aws_apigatewayv2_api.http_api.id
   route_key          = "POST /VisitorCounterFunction"
   target             = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
-  authorization_type = "NONE"        
+  authorization_type = "NONE"
 }
 
 resource "aws_apigatewayv2_stage" "default" {
