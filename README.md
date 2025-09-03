@@ -5,11 +5,11 @@ This repository contains the code and infrastructure for my personal resume webs
 
 🚀 Features
 
-Static Resume Website
+- Static Resume Website
 
 Hosted on Amazon S3, served securely via CloudFront, with a custom domain managed by Route 53.
 
-Visitor Counter API
+- Visitor Counter API
 
 Backend: AWS Lambda + API Gateway
 
@@ -17,13 +17,13 @@ Database: DynamoDB for persistent visitor tracking
 
 Functionality written in Python
 
-CI/CD Automation
+- CI/CD Automation
 
 GitHub Actions for automated builds and deployments
 
 Terraform for Infrastructure as Code (IaC), ensuring consistency and scalability
 
-Security & Performance
+- Security & Performance
 
 HTTPS with AWS Certificate Manager (ACM)
 
