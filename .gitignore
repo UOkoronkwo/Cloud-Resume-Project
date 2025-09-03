@@ -213,7 +213,7 @@ __marimo__/
 
 # Build artifacts
 *.zip
-!lambda.zip
+
 # macOS Finder metadata
 .DS_Store
 
