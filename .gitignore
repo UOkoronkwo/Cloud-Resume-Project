@@ -208,13 +208,13 @@ __marimo__/
 
 # Terraform state & plugins
 .terraform/
-*.tfstate
+#*.tfstate
 .terraform.lock.hcl
-*.tfstate.backup
+#*.tfstate.backup
 
 # Build artifacts
 *.zip
-
+!lambda.zip
 # macOS Finder metadata
 .DS_Store
 
