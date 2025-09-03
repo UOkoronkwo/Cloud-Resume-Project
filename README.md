@@ -30,9 +30,9 @@ HTTPS with AWS Certificate Manager (ACM)
 Global distribution with CloudFront caching
 
 ```mermaid
-flowchart TB
-  A[User (Browser)]
-  B[Route 53]
-  C[CloudFront]
-  D[S3]
-  A --> B --> C --> D
+flowchart TB;
+  A[User (Browser)];
+  B[Route 53];
+  C[CloudFront];
+  D[S3];
+  A --> B --> C --> D;
