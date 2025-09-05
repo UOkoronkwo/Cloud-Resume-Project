@@ -23,11 +23,51 @@ resource "aws_iam_policy_attachment" "lambda_logs" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-resource "aws_iam_policy_attachment" "dynamodb_access" {
-  name       = "lambda-dynamodb"
-  roles      = [aws_iam_role.lambda_exec_role.name]
-  policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+# DynamoDB table for visitor counter
+resource "aws_dynamodb_table" "visitors" {
+  name         = "resume-visitor-counter"   # existing table name
+  billing_mode = "PAY_PER_REQUEST"
+
+  hash_key = "id"
+  attribute {
+    name = "id"
+    type = "S"
+  }
+
+  tags = { Project = "cloud-resume" }
+
+  lifecycle {
+    prevent_destroy = true   # safety in prod
+  }
 }
+
+# Least-privilege policy for Lambda
+data "aws_iam_policy_document" "lambda_ddb_rw" {
+  statement {
+    actions = [
+      "dynamodb:DescribeTable",
+      "dynamodb:GetItem",
+      "dynamodb:PutItem",
+      "dynamodb:UpdateItem"
+    ]
+    resources = [
+      aws_dynamodb_table.visitors.arn,
+      "${aws_dynamodb_table.visitors.arn}/index/*"
+    ]
+  }
+}
+
+resource "aws_iam_policy" "lambda_ddb_rw" {
+  name   = "lambda-ddb-rw"
+  policy = data.aws_iam_policy_document.lambda_ddb_rw.json
+}
+
+resource "aws_iam_policy_attachment" "lambda_ddb_attach" {
+  name       = "lambda-ddb-attach"
+  roles      = [aws_iam_role.lambda_exec_role.name]
+  policy_arn = aws_iam_policy.lambda_ddb_rw.arn
+}
+
 
 
 resource "aws_lambda_function" "visitor_counter" {
@@ -37,6 +77,11 @@ resource "aws_lambda_function" "visitor_counter" {
   handler          = "lambda_function.lambda_handler"
   runtime          = "python3.12"
   source_code_hash = filebase64sha256("lambda.zip")
+  environment {
+    variables = {
+      DDB_TABLE = aws_dynamodb_table.visitors.name
+    }
+  }
 }
 
 resource "aws_apigatewayv2_api" "http_api" {
