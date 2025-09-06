@@ -7,7 +7,8 @@ The project demonstrates skills in **AWS services**, **Terraform**, **CI/CD pipe
 
 ## 📐 Architecture
 
-![Cloud Resume Architecture](./Cloud-Resume-Architecture.drawio.png)
+<img width="1622" height="822" alt="image" src="https://github.com/user-attachments/assets/78d1626e-6245-4734-b95d-c2e2427ecfd3" />
+
 
 ### Legend
 - **Route 53** → DNS for `uchennaokoronkwo.com`  
