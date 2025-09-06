@@ -1,30 +1,70 @@
-# ☁️ Cloud-Hosted Resume Website
+# 🌐 Cloud-Hosted Resume Project
 
-This repository contains the code and infrastructure for my personal resume website, fully deployed and automated on AWS. The project demonstrates modern cloud engineering, serverless backend design, and Infrastructure as Code practices.
+This repository contains my implementation of the **Cloud Resume Challenge**, deployed on **AWS** with Infrastructure as Code (IaC) and CI/CD automation.  
+The project demonstrates skills in **AWS services**, **Terraform**, **CI/CD pipelines**, and **serverless application design**.
 
+---
 
-🚀 Features
+## 📐 Architecture
 
-Static Resume Website
+![Cloud Resume Architecture](./Cloud-Resume-Architecture.drawio.png)
 
-- Hosted on Amazon S3, served securely via CloudFront, with a custom domain managed by Route 53.
+### Legend
+- **Route 53** → DNS for `uchennaokoronkwo.com`  
+- **AWS Certificate Manager (ACM)** → SSL/TLS certificate for HTTPS  
+- **CloudFront** → CDN for caching + distribution  
+- **S3** → Static website hosting (HTML/CSS/JS)  
+- **API Gateway** → HTTP API entry point  
+- **Lambda** → Serverless function for visitor counter  
+- **DynamoDB** → NoSQL DB storing visitor count  
+- **GitHub / Actions** → CI/CD pipeline for automated deployments  
+- **Terraform** → Infrastructure as Code (manages backend resources)
 
-Visitor Counter API
+> **Note:** Backend resources (API Gateway, Lambda, DynamoDB, IAM) are fully managed by Terraform.  
+> Frontend resources (Route 53, CloudFront, S3, ACM) are manually deployed but integrated into CI/CD for updates.
 
-- Backend: AWS Lambda + API Gateway
+---
 
-- Database: DynamoDB for persistent visitor tracking
+## 🚀 Features
+- ✅ Custom domain with HTTPS (via Route 53 + ACM)  
+- ✅ Static resume website hosted in **Amazon S3**  
+- ✅ Global distribution and caching via **CloudFront**  
+- ✅ Visitor counter implemented with **API Gateway → Lambda → DynamoDB**  
+- ✅ Automated deployments with **GitHub Actions**  
+- ✅ Backend Infrastructure as Code using **Terraform**  
 
-- Functionality written in Python
+---
 
-CI/CD Automation
+## 🛠️ Technologies Used
+- **AWS**: Route 53, ACM, CloudFront, S3, API Gateway, Lambda, DynamoDB, IAM  
+- **Terraform**: Infrastructure provisioning for backend services  
+- **GitHub Actions**: CI/CD for deployments  
+- **Python**: Lambda function logic  
+- **HTML/CSS/JS**: Frontend static resume site  
 
-- GitHub Actions for automated builds and deployments
+---
 
-- Terraform for Infrastructure as Code (IaC), ensuring consistency and scalability
+## ⚙️ Deployment Workflow
+1. Developer pushes changes to GitHub.  
+2. GitHub Actions pipeline runs:  
+   - Builds and syncs static website files to S3.  
+   - Invalidates CloudFront cache.  
+   - Runs Terraform to provision/update backend infrastructure.  
+3. End users access the site via `uchennaokoronkwo.com`, served securely and globally.  
 
-Security & Performance
+---
 
-- HTTPS with AWS Certificate Manager (ACM)
+## 📊 Visitor Counter Example
+The site includes a live visitor counter powered by DynamoDB.  
+Each page load invokes API Gateway → Lambda → DynamoDB, which atomically increments and returns the visitor count.
 
-- Global distribution with CloudFront caching
+---
+
+## 📄 Resume
+You can view my live cloud-hosted resume here:  
+👉 [https://uchennaokoronkwo.com](https://uchennaokoronkwo.com)
+
+---
+
+## 🙏 Acknowledgement
+Inspired by the [Cloud Resume Challenge](https://cloudresumechallenge.dev) by Forrest Brazeal.
