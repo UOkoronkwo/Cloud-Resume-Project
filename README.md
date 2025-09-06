@@ -64,8 +64,3 @@ Each page load invokes API Gateway → Lambda → DynamoDB, which automatically 
 ## 📄 Resume
 You can view my live cloud-hosted resume here:  
 👉 [https://uchennaokoronkwo.com](https://uchennaokoronkwo.com)
-
----
-
-## 🙏 Acknowledgement
-Inspired by the [Cloud Resume Challenge](https://cloudresumechallenge.dev) by Forrest Brazeal.
