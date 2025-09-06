@@ -1,7 +1,7 @@
 # 🌐 Cloud-Hosted Resume Project
 
-This repository contains my implementation of the **Cloud Resume Challenge**, deployed on **AWS** with Infrastructure as Code (IaC) and CI/CD automation.  
-The project demonstrates skills in **AWS services**, **Terraform**, **CI/CD pipelines**, and **serverless application design**.
+This repository contains a **cloud-hosted resume website** deployed on **AWS** with Infrastructure as Code (IaC) and CI/CD automation.  
+It demonstrates practical skills in **AWS services**, **Terraform**, **CI/CD pipelines**, and **serverless application design**.
 
 ---
 
