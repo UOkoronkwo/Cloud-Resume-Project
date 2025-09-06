@@ -14,7 +14,7 @@ The project demonstrates skills in **AWS services**, **Terraform**, **CI/CD pipe
 - **Route 53** → DNS for `uchennaokoronkwo.com`  
 - **AWS Certificate Manager (ACM)** → SSL/TLS certificate for HTTPS  
 - **CloudFront** → CDN for caching + distribution  
-- **S3** → Static website hosting (HTML/CSS/JS)  
+- **S3** → Static website hosting (HTML/CSS)  
 - **API Gateway** → HTTP API entry point  
 - **Lambda** → Serverless function for visitor counter  
 - **DynamoDB** → NoSQL DB storing visitor count  
@@ -41,7 +41,7 @@ The project demonstrates skills in **AWS services**, **Terraform**, **CI/CD pipe
 - **Terraform**: Infrastructure provisioning for backend services  
 - **GitHub Actions**: CI/CD for deployments  
 - **Python**: Lambda function logic  
-- **HTML/CSS/JS**: Frontend static resume site  
+- **HTML/CSS**: Frontend static resume site  
 
 ---
 
@@ -57,7 +57,7 @@ The project demonstrates skills in **AWS services**, **Terraform**, **CI/CD pipe
 
 ## 📊 Visitor Counter Example
 The site includes a live visitor counter powered by DynamoDB.  
-Each page load invokes API Gateway → Lambda → DynamoDB, which atomically increments and returns the visitor count.
+Each page load invokes API Gateway → Lambda → DynamoDB, which automatically increments and returns the visitor count.
 
 ---
 
