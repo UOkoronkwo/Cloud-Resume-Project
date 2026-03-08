@@ -1,11 +1,11 @@
-# 🌐 Cloud-Hosted Resume Project
+# Cloud-Hosted Resume Project
 
 This repository contains a **cloud-hosted resume website** deployed on **AWS** with Infrastructure as Code (IaC) and CI/CD automation.  
 It demonstrates practical skills in **AWS services**, **Terraform**, **CI/CD pipelines**, and **serverless application design**.
 
 ---
 
-## 📐 Architecture
+## Architecture
 
 <img width="1622" height="822" alt="image" src="https://github.com/user-attachments/assets/78d1626e-6245-4734-b95d-c2e2427ecfd3" />
 
@@ -26,17 +26,17 @@ It demonstrates practical skills in **AWS services**, **Terraform**, **CI/CD pip
 
 ---
 
-## 🚀 Features
-- ✅ Custom domain with HTTPS (via Route 53 + ACM)  
-- ✅ Static resume website hosted in **Amazon S3**  
-- ✅ Global distribution and caching via **CloudFront**  
-- ✅ Visitor counter implemented with **API Gateway → Lambda → DynamoDB**  
-- ✅ Automated deployments with **GitHub Actions**  
-- ✅ Backend Infrastructure as Code using **Terraform**  
+## Features
+- Custom domain with HTTPS (via Route 53 + ACM)  
+- Static resume website hosted in **Amazon S3**  
+- Global distribution and caching via **CloudFront**  
+- Visitor counter implemented with **API Gateway → Lambda → DynamoDB**  
+- Automated deployments with **GitHub Actions**  
+- Backend Infrastructure as Code using **Terraform**  
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 - **AWS**: Route 53, ACM, CloudFront, S3, API Gateway, Lambda, DynamoDB, IAM  
 - **Terraform**: Infrastructure provisioning for backend services  
 - **GitHub Actions**: CI/CD for deployments  
@@ -45,7 +45,7 @@ It demonstrates practical skills in **AWS services**, **Terraform**, **CI/CD pip
 
 ---
 
-## ⚙️ Deployment Workflow
+## Deployment Workflow
 1. Developer pushes changes to GitHub.  
 2. GitHub Actions pipeline runs:  
    - Builds and syncs static website files to S3.  
@@ -55,12 +55,12 @@ It demonstrates practical skills in **AWS services**, **Terraform**, **CI/CD pip
 
 ---
 
-## 📊 Visitor Counter Example
+## Visitor Counter Example
 The site includes a live visitor counter powered by DynamoDB.  
 Each page load invokes API Gateway → Lambda → DynamoDB, which automatically increments and returns the visitor count.
 
 ---
 
-## 📄 Resume
+## Resume
 You can view my live cloud-hosted resume here:  
-👉 [https://uchennaokoronkwo.com](https://uchennaokoronkwo.com)
+[https://uchennaokoronkwo.com](https://uchennaokoronkwo.com)
